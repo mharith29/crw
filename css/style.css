@@ -1,0 +1,604 @@
+/* CSS Styles */
+:root {
+    --bg-dark: #050505;
+    --bg-panel: #121212;
+    --text-main: #f4f4f4;
+    --text-muted: #a0a0a0;
+    --accent-red: #e61d2b;
+    --brand-gold: #E5D076;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px; 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Navigation */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 10px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(5, 5, 5, 0.9);
+    backdrop-filter: blur(10px);
+    z-index: 2000; /* Higher than video */
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: var(--brand-gold);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover { color: var(--accent-red); }
+
+/* --- DROPDOWN MENU (Desktop) --- */
+.dropdown { position: relative; }
+
+nav ul.dropdown-menu {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 100%; 
+    right: 0;
+    background: rgba(10, 10, 10, 0.95);
+    min-width: 180px;
+    border: 1px solid #222;
+    border-top: 2px solid var(--brand-gold); 
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+    transform: translateY(15px);
+    transition: all 0.3s ease;
+}
+
+.dropdown:hover .dropdown-menu {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0); 
+}
+
+.dropdown-menu a {
+    color: var(--text-main); 
+    padding: 10px 20px;
+    display: block;
+    font-size: 0.85rem;
+}
+
+/* Hero & Sections */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+    background: linear-gradient(rgba(5, 5, 5, 0.7), rgba(5, 5, 5, 0.9)), url('../assets/mainimage.jpg') center/cover no-repeat;
+}
+
+.hero h1 { font-size: 3.5rem; text-transform: uppercase; margin-bottom: 20px; }
+
+.cta-btn {
+    padding: 15px 40px;
+    border: 1px solid var(--text-main);
+    color: var(--text-main);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+/* Video Section */
+.video-brand-section {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding-bottom: 60px;
+}
+
+.brand-bg-video {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 2;
+}
+.validation-section {
+    padding: 120px 8%; /* Increased padding for massive breathing room */
+    background-color: var(--bg-dark); /* Pure dark backdrop for stark contrast */
+}
+
+/* Section Header styling */
+.validation-section h2.section-title {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 5px; /* Wide tracking makes it feel premium */
+    color: var(--text-muted);
+    margin-bottom: 60px;
+    font-weight: 400;
+    position: relative;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* 1. ASYMMETRICAL HERO BLOCK (Top/Featured Engineering Post) */
+.featured-journal-item {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr; /* Asymmetrical split */
+    gap: 60px;
+    align-items: center;
+    margin-bottom: 100px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.journal-img-container {
+    width: 100%;
+    overflow: hidden;
+    background: #000;
+    aspect-ratio: 16 / 9; /* Crisp horizontal bounds */
+}
+
+.journal-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1); /* Elegant, slow magnification */
+}
+
+/* Zoom animation on hover */
+.featured-journal-item:hover .journal-img-container img,
+.grid-journal-item:hover .journal-img-container img {
+    transform: scale(1.03);
+}
+
+/* Text Content Area */
+.journal-meta {
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--accent-red);
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.journal-text h3 {
+    color: var(--text-main);
+    text-transform: uppercase;
+    font-size: 2.2rem;
+    line-height: 1.15;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    transition: color 0.3s;
+}
+
+.featured-journal-item:hover .journal-text h3 {
+    color: var(--brand-gold);
+}
+
+.journal-text p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    font-weight: 300;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+/* Clean, minimal link indicator */
+.journal-action-link {
+    display: inline-block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-main);
+    border-bottom: 1px solid var(--brand-gold);
+    padding-bottom: 5px;
+    font-weight: 600;
+}
+
+/* 2. THE MULTI-COLUMN LOWER GRID */
+.journal-secondary-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Clean 3-column layout */
+    gap: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 60px;
+
+    max-width: 1200px;
+    margin:0 auto;
+    padding-left:40px;
+    padding-right:40px;
+}
+
+.grid-journal-item {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+
+    text-align: center;
+    align-items:center
+}
+
+.grid-journal-item .journal-img-container {
+    aspect-ratio: 4 / 3; /* Uniform grids below the main piece */
+    margin-bottom: 20px;
+}
+
+.grid-journal-item h4 {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    color: var(--text-main);
+    line-height: 1.4;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-top: 5px;
+    transition: color 0.3s;
+}
+
+.grid-journal-item:hover h4 {
+    color: var(--brand-gold);
+}
+/* --- RIZOMA-INSPIRED CATEGORY EXPLORER --- */
+.lineup-selector-section {
+    padding: 60px 10%;
+    background-color: #0d0d0d;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.lineup-title {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: var(--brand-gold);
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.lineup-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px; /* Creates ultra-fine lines between boxes */
+    background-color: rgba(255, 255, 255, 0.08); /* Border color between grids */
+}
+
+.lineup-box {
+    background-color: #050505;
+    padding: 40px 30px;
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.4s ease;
+}
+
+.lineup-box:hover {
+    background-color: #0a0a0a;
+}
+
+.lineup-box .series-number {
+    font-size: 0.7rem;
+    color: var(--accent-red);
+    font-weight: 700;
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.lineup-box h3 {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: var(--text-main);
+    transition: color 0.3s;
+}
+
+.lineup-box:hover h3 {
+    color: var(--brand-gold);
+}
+
+.lineup-box p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    font-weight: 300;
+}
+/* --- PREMIUM RACING DIVISION EDITORIAL STYLING --- */
+.racing-division-section {
+    padding: 140px 8%; /* Enormous vertical breathing room */
+    background-color: var(--bg-dark); /* Matches your exact main background color perfectly */
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.racing-header {
+    text-align: center;
+    margin-bottom: 90px;
+}
+
+.racing-sub-title {
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 5px; /* Wide editorial tracking */
+    color: var(--brand-gold);
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.racing-main-title {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--text-main);
+    font-weight: 400;
+}
+/* --- EDITORIAL IMAGE WRAPPER --- */
+.partnership-img-wrapper {
+    width: 100%;
+    aspect-ratio: 16 / 10; /* Clean, horizontal cinematic layout */
+    overflow: hidden;
+    background-color: #000;
+    margin-bottom: 25px; /* Creates clean airspace before the typography starts */
+}
+
+.partnership-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Prevents your racing photos from warping or distorting */
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Premium zoom effect when user hovers anywhere over the column */
+.partnership-col:hover .partnership-img-wrapper img {
+    transform: scale(1.04);
+}
+.partnership-editorial-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px; /* Expansive layout gap */
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Elegant ultra-thin center line divider for desktop screens */
+@media (min-width: 769px) {
+    .partnership-editorial-grid::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 10%;
+        bottom: 10%;
+        width: 1px;
+        background-color: rgba(255, 255, 255, 0.08); /* Barely visible technical divider line */
+        transform: translateX(-50%);
+    }
+}
+
+.partnership-col {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+}
+
+.col-meta {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.partnership-col h3 {
+    text-transform: uppercase;
+    font-size: 1.8rem; /* Bold, commanding headers */
+    letter-spacing: 1px;
+    color: var(--text-main);
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+.partnership-col p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    font-weight: 300;
+    line-height: 1.8; /* Expansive line spacing for clean reading */
+    margin-bottom: 40px;
+}
+
+.col-status-link {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--accent-red);
+    font-weight: 700;
+    margin-top: auto; /* Pushes element to the absolute bottom of the column alignment */
+}
+
+.col-status-link.gold-text {
+    color: var(--brand-gold);
+}
+
+/* Adjust the vertical spacing of your existing validation section below this so it doesn't crowd */
+.validation-section {
+    padding-top: 140px !important;
+}
+
+/* High-quality responsive layouts for mobile targets */
+@media (max-width: 768px) {
+    .racing-division-section {
+        padding: 90px 6%;
+    }
+    .partnership-editorial-grid {
+        grid-template-columns: 1fr;
+        gap: 70px;
+    }
+    .partnership-col h3 {
+        font-size: 1.4rem;
+        margin-bottom: 15px;
+    }
+    .racing-header {
+        margin-bottom: 50px;
+    }
+}
+/* Responsive fix for mobile layout */
+@media (max-width: 768px) {
+    .lineup-grid {
+        grid-template-columns: 1fr;
+    }
+    .product-hero {
+        grid-template-columns: 1fr !important;
+        padding-top: 120px;
+        gap: 30px;
+    }
+}
+
+/* --- RESPONSIVE ADJUSTMENTS INTO YOUR MEDIA QUERY --- */
+@media (max-width: 900px) {
+    .journal-secondary-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .validation-section {
+        padding: 60px 5%;
+    }
+    .featured-journal-item {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        margin-bottom: 60px;
+    }
+    .journal-text h3 {
+        font-size: 1.6rem;
+    }
+    .journal-secondary-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+        padding-top: 40px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+/* --- MOBILE OPTIMIZATION --- */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column !important;
+        height: auto !important;
+        padding: 15px 0 !important;
+        gap: 10px !important;
+    }
+
+    /* Target logo size specifically */
+    #home-page .logo-link img, .logo-link img {
+        height: 70px !important; 
+        width: auto !important;
+        transform: scale(1) !important;
+        margin: 0 auto !important;
+    }
+
+    nav ul {
+        gap: 15px !important;
+        justify-content: center !important;
+        width: 100% !important;
+    }
+
+    nav a { font-size: 0.75rem !important; }
+
+    /* Fix Dropdown Positioning */
+    nav ul.dropdown-menu {
+        position: fixed !important;
+        top: 130px !important; 
+        left: 50% !important;
+        right: auto !important;
+        transform: translateX(-50%) !important;
+        width: 250px !important;
+        background: rgba(10, 10, 10, 0.98) !important;
+        border: 1px solid var(--brand-gold) !important;
+        display: none; /* Hidden until hover */
+        visibility: visible !important; /* Ensure it shows when displayed */
+        opacity: 1 !important;
+        z-index: 9999;
+    }
+    
+
+    /* Trigger for mobile hover/tap */
+    .dropdown:hover .dropdown-menu {
+        display: flex !important;
+    }
+
+    .dropdown-menu a {
+        padding: 15px !important;
+        text-align: center !important;
+        border-bottom: 1px solid #222;
+    }
+        .validation-grid { grid-template-columns: 1fr; }
+        
+
+    .hero h1 { font-size: 1.8rem !important; }
+    
+    .grid-2 { grid-template-columns: 1fr; gap: 30px; }
+}
+/* --- FOOTER STYLING --- */
+footer {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: var(--bg-dark);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    width: 100%;
+}
+
+footer p {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}

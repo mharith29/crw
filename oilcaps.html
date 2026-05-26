@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APEX Oil Caps | CRW Race-Craft Studios</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        :root {
+            --bg-dark: #050505;
+            --bg-panel: #121212;
+            --text-main: #f4f4f4;
+            --text-muted: #a0a0a0;
+            --accent-red: #e61d2b;
+            --brand-gold: #E5D076;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Helvetica Neue', Arial, sans-serif; }
+        body { background-color: var(--bg-dark); color: var(--text-main); line-height: 1.6; overflow-x: hidden; }
+        
+        /* Navigation */
+        header {
+            position: fixed; top: 0; width: 100%; padding: 5px 50px;
+            display: flex; justify-content: space-between; align-items: center;
+            background: rgba(5, 5, 5, 0.9); backdrop-filter: blur(10px);
+            z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        nav ul { list-style: none; display: flex; gap: 30px; }
+        nav a { color: var(--brand-gold); text-decoration: none; font-size: 0.9rem; font-weight: 600; text-transform: uppercase; transition: 0.3s; }
+        nav a:hover { color: var(--accent-red); }
+
+        /* Page Intro */
+        .intro-section { padding: 150px 10% 50px; text-align: center; }
+        .intro-section h1 { font-size: 3rem; text-transform: uppercase; letter-spacing: 4px; margin-bottom: 10px; }
+        .intro-section p { color: var(--text-muted); font-size: 1.1rem; max-width: 700px; margin: 0 auto; }
+
+        /* Side-by-Side Grid */
+        .product-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2px; /* Fine line look */
+            background-color: #222; /* Line color */
+            margin-bottom: 50px;
+        }
+
+        .product-card {
+            background-color: #fff; /* White background for the sleek visual */
+            padding: 80px 40px;
+            color: #000;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .product-card:nth-child(even) { background-color: #f9f9f9; } /* Subtle alternate grey */
+
+        /* The Frame Method */
+        .frame {
+            width: 100%;
+            max-width: 450px;
+            height: 400px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: transform 0.6s ease;
+        }
+
+        .product-card:hover .frame img { transform: scale(1.05); }
+
+        .card-label { font-size: 0.8rem; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 15px; display: block; }
+        .card-title { font-size: 1.8rem; font-weight: 700; margin-bottom: 15px; text-transform: uppercase; }
+        .card-desc { font-size: 0.95rem; color: #444; max-width: 400px; line-height: 1.5; }
+
+        footer { background-color: #000; padding: 60px 10%; text-align: center; border-top: 1px solid #111; }
+
+        @media (max-width: 992px) {
+            .product-grid { grid-template-columns: 1fr; }
+            .intro-section h1 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html">
+            <img src="assets/crwlogo.png" alt="CRW" style="height: 80px; width: auto; transform: scale(2.5); transform-origin: left center;">
+        </a>
+        <nav>
+            <ul>
+                <li><a href="index.html#about">The Brand</a></li>
+                <li><a href="index.html#engineering">Engineering</a></li>
+                <li><a href="index.html">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="intro-section" data-aos="fade-down">
+        <h1>The APEX Series</h1>
+        <p>Engine Oil Caps designed for high-performance motorcycles. CNC machined from aerospace-grade billet aluminum for those who refuse to compromise.</p>
+    </div>
+
+    <section class="product-grid">
+        <div class="product-card" data-aos="fade-right">
+            <span class="card-label">Performance Series</span>
+            <div class="frame">
+                <img src="assets/regular_caps.jpeg" alt="APEX Regular Oil Cap">
+            </div>
+            <h2 class="card-title">APEX Regular</h2>
+            <p class="card-desc">Features a race-wire ready mounting hole and precision-milled pockets for lightweight performance and a flawless grip.</p>
+        </div>
+
+        <div class="product-card" data-aos="fade-left">
+            <span class="card-label">Heritage Series</span>
+            <div class="frame">
+                <img src="assets/classic_caps.jpeg" alt="APEX Classic Oil Cap">
+            </div>
+            <h2 class="card-title">APEX Classic</h2>
+            <p class="card-desc">Bespoke aesthetics for the modern classic. Hand-finished details with a timeless knurled pattern for Triumph and cafe-racer builds.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 CRW Race-Craft Studios. Singapore.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({ duration: 1000, once: true });
+    </script>
+</body>
+</html>
