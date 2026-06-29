@@ -3,239 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Swingarm Bobbins | CRW Race-Craft Studios</title>
+    <title>CRW Paddock Spools | CRW Race-Craft Studios</title>
+    <meta name="description" content="CRW Paddock Spools — 304 stainless steel, CNC-milled swingarm bobbins, FEA-validated and lab stress-tested for track and street use.">
+    <meta property="og:title" content="CRW Paddock Spools">
+    <meta property="og:description" content="304 stainless steel paddock spools, CNC-milled and structurally validated for the track.">
+    <meta property="og:image" content="assets/pins.jpeg">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="assets/favicon.png">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <style>
-        :root {
-            --bg-dark: #050505;
-            --bg-panel: #0d0d0d;
-            --bg-spec: #121212;
-            --text-main: #f4f4f4;
-            --text-muted: #8a8a8a;
-            --accent-red: #e61d2b;
-            --brand-gold: #E5D076;
-            --border-color: rgba(255, 255, 255, 0.08);
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Helvetica Neue', Arial, sans-serif; letter-spacing: -0.01em; }
-        body { background-color: var(--bg-dark); color: var(--text-main); line-height: 1.6; overflow-x: hidden; }
-        
-        /* Navigation */
-        header {
-            position: fixed; top: 0; width: 100%; padding: 15px 50px;
-            display: flex; justify-content: space-between; align-items: center;
-            background: rgba(5, 5, 5, 0.85); backdrop-filter: blur(20px);
-            z-index: 1000; border-bottom: 1px solid var(--border-color);
-        }
-        nav ul { list-style: none; display: flex; gap: 40px; }
-        nav a { color: var(--brand-gold); text-decoration: none; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; transition: 0.3s; }
-        nav a:hover { color: var(--text-main); }
-
-        /* Premium Split Product Hero Layout */
-        .product-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 160px 5% 80px;
-            display: grid;
-            grid-template-columns: 1fr 1.1fr;
-            gap: 80px;
-            align-items: start;
-        }
-
-        /* Sticky Left Column (Info) */
-        .product-info-side {
-            position: sticky;
-            top: 140px;
-        }
-        .series-badge {
-            font-size: 0.8rem;
-            color: var(--accent-red);
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.2em;
-            margin-bottom: 15px;
-            display: inline-block;
-        }
-        .product-title { 
-            font-size: 3.5rem; 
-            text-transform: uppercase; 
-            font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 15px; 
-            letter-spacing: -0.02em;
-        }
-        .tagline { 
-            color: var(--brand-gold); 
-            font-size: 1.1rem; 
-            font-weight: 600; 
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 30px; 
-        }
-        .product-description {
-            color: var(--text-muted); 
-            font-size: 1.1rem; 
-            max-width: 520px;
-            margin-bottom: 40px;
-            border-left: 2px solid var(--border-color);
-            padding-left: 20px;
-        }
-
-        /* Rizoma-style Tech Data Grid */
-        .tech-data-table {
-            border-top: 1px solid var(--border-color);
-            margin-top: 20px;
-        }
-        .tech-row {
-            display: flex;
-            justify-content: space-between;
-            padding: 15px 0;
-            border-bottom: 1px solid var(--border-color);
-            font-size: 0.9rem;
-        }
-        .tech-label {
-            color: var(--text-muted);
-            text-transform: uppercase;
-            font-weight: 500;
-            letter-spacing: 0.05em;
-        }
-        .tech-value {
-            color: var(--text-main);
-            font-weight: 600;
-            text-align: right;
-        }
-        
-        /* Right Column (Showcase Frame) */
-        .product-showcase-side {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-        }
-        .product-frame {
-            width: 100%;
-            background: #ffffff; /* Contrast block for white background images */
-            border: 1px solid var(--border-color);
-            padding: 40px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 4px;
-            overflow: hidden;
-        }
-        .product-frame img {
-            width: 100%;
-            height: auto;
-            max-height: 550px;
-            object-fit: contain;
-            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .product-frame:hover img {
-            transform: scale(1.05);
-        }
-
-        /* Validation Section */
-        .validation-section {
-            background-color: var(--bg-panel);
-            padding: 100px 10%;
-            border-top: 1px solid var(--border-color);
-        }
-        .section-header {
-            margin-bottom: 60px;
-            text-align: center;
-        }
-        .section-title {
-            font-size: 2rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: 10px;
-        }
-        .section-subtitle {
-            color: var(--text-muted);
-            font-size: 1rem;
-        }
-
-        .validation-grid {
-            max-width: 1200px;
-            margin: 0 auto 80px;
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-        .validation-grid.reverse {
-            grid-template-columns: 1fr 1.2fr;
-        }
-
-        .report-frame {
-            border: 1px solid var(--border-color);
-            background: #111;
-            border-radius: 4px;
-            overflow: hidden;
-            display: flex;
-        }
-        .report-frame img {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-        }
-
-        .tech-specs h3 {
-            font-size: 1.5rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 25px;
-            color: var(--text-main);
-        }
-        .spec-item {
-            margin-bottom: 25px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-        }
-        .spec-label {
-            display: block;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            color: var(--brand-gold);
-            font-weight: 700;
-            letter-spacing: 0.1em;
-            margin-bottom: 5px;
-        }
-        .spec-item p {
-            color: var(--text-muted);
-            font-size: 1rem;
-        }
-
-        footer { 
-            background-color: #000; 
-            padding: 40px 10%; 
-            text-align: center; 
-            border-top: 1px solid var(--border-color);
-            font-size: 0.85rem;
-            letter-spacing: 0.05em;
-        }
-
-        /* Responsive */
-        @media (max-width: 968px) {
-            .product-container { grid-template-columns: 1fr; gap: 40px; padding-top: 120px; }
-            .product-info-side { position: relative; top: 0; }
-            .validation-grid, .validation-grid.reverse { grid-template-columns: 1fr; gap: 30px; }
-            .validation-grid.reverse .tech-specs { order: 2; }
-            .validation-grid.reverse .report-frame { order: 1; }
-        }
-    </style>
 </head>
 <body>
 
-<header>
+    <header>
         <a href="index.html" class="logo-link">
-            <img src="assets/crwlogo.png" alt="CRW Race-Craft Studios" style="height: 42px; width: auto; display: block;">
+            <img src="assets/crwlogo.png" alt="CRW Race-Craft Studios">
         </a>
         <nav>
             <ul>
                 <li><a href="index.html#about">The Brand</a></li>
-                <li><a href="index.html#racing-division">Engineering</a></li>
+                <li><a href="services.html">Services</a></li>
                 <li class="dropdown">
-                    <a href="#">Products ▾</a>
+                    <a href="#" aria-haspopup="true">Products ▾</a>
                     <ul class="dropdown-menu">
                         <li><a href="bobbypins.html">Paddock Spools</a></li>
                         <li><a href="oilcaps.html">Apex Oil Caps</a></li>
@@ -251,13 +40,13 @@
             <h1 class="product-title">CRW Paddock Spools</h1>
             <p class="tagline">Stress Tested. Precision Proven.</p>
             <p class="product-description">
-                Engineered for maximum structural integrity under extreme loads. Forged for the track environment, refined to deliver flawless rear-stand alignment on the street.
+                Built for structural integrity under extreme loads. Forged for the track, refined for flawless rear-stand alignment on the street.
             </p>
 
             <div class="tech-data-table">
                 <div class="tech-row">
                     <span class="tech-label">Material</span>
-                    <span class="tech-value">304 High-Grade Stainless Steel</span>
+                    <span class="tech-value">304 Stainless Steel</span>
                 </div>
                 <div class="tech-row">
                     <span class="tech-label">Manufacturing Process</span>
@@ -276,7 +65,7 @@
 
         <div class="product-showcase-side" data-aos="fade-left">
             <div class="product-frame">
-                <img src="assets/pins.jpeg" alt="CRW Pins Technical View">
+                <img src="assets/pins.jpeg" alt="CRW Paddock Spools — technical view">
             </div>
         </div>
     </main>
@@ -284,22 +73,22 @@
     <section class="validation-section">
         <div class="section-header" data-aos="fade-up">
             <h2 class="section-title">Structural Validation</h2>
-            <p class="section-subtitle">Real-world benchmarking meets predictive digital physics.</p>
+            <p class="section-subtitle">Lab testing meets digital simulation — same conclusion, twice.</p>
         </div>
-        
+
         <div class="validation-grid">
             <div class="report-frame" data-aos="fade-right">
-                <img src="assets/BOBBY.jpg" alt="CRW Lab Force Testing">
+                <img src="assets/BOBBY.jpg" alt="CRW lab force testing" loading="lazy">
             </div>
             <div class="tech-specs" data-aos="fade-left">
                 <h3>Physical Stress Analysis</h3>
                 <div class="spec-item">
                     <span class="spec-label">Test Environment</span>
-                    <p>Universal Testing Machine (UTM) — Lab Force Calibration</p>
+                    <p>Universal Testing Machine (UTM), lab force calibration.</p>
                 </div>
                 <div class="spec-item">
                     <span class="spec-label">Objective</span>
-                    <p>Verifying component resistance against acute shear forces and crushing pressures during rapid paddock lifting cycles.</p>
+                    <p>Verify resistance to shear and crushing forces during rapid paddock-stand lifting cycles.</p>
                 </div>
             </div>
         </div>
@@ -309,15 +98,15 @@
                 <h3>FEA Digital Simulation</h3>
                 <div class="spec-item">
                     <span class="spec-label">Methodology</span>
-                    <p>Static Structural Finite Element Analysis (FEA) tracking structural deformation and Von-Mises stress pathways.</p>
+                    <p>Static structural FEA, tracking deformation and Von Mises stress pathways.</p>
                 </div>
                 <div class="spec-item">
                     <span class="spec-label">Performance Factor</span>
-                    <p>Engineered to handle <strong>2.5X greater load factors</strong> than baseline alloy spools, providing absolute peace of mind on the paddock stand.</p>
+                    <p>Rated for <strong>2.5× the load factor</strong> of baseline alloy spools.</p>
                 </div>
             </div>
             <div class="report-frame" data-aos="fade-left">
-                <img src="assets/stresstesting.jpg" alt="FEA Analysis Simulation">
+                <img src="assets/stresstesting.jpg" alt="FEA stress simulation" loading="lazy">
             </div>
         </div>
     </section>
@@ -329,9 +118,9 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
       AOS.init({
-        duration: 1000, 
-        once: true,    
-        offset: 120    
+        duration: 1000,
+        once: true,
+        offset: 120
       });
     </script>
 </body>
